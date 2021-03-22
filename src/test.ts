@@ -1,3 +1,12 @@
+/**
+ * Title: test.ts
+ * Author: Professor Krasso
+ * Date: 21 March 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: main test file for project
+ */
+
+
 // This file is required by karma.conf.js and loads recursively all the .spec and framework files
 
 import 'zone.js/dist/zone-testing';

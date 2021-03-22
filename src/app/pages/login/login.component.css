@@ -1,0 +1,29 @@
+/**
+ * Title: login.component.css
+ * Author: Professor Krasso
+ * Date: 21 March 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: all css styling for the login component
+ */
+
+
+.login-container {
+    width: 30%;
+    margin: 0 auto;
+    margin-top: 10%;
+}
+
+.login-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: lighter;
+}
+
+.login-subtitle {
+    text-align: center;
+}
+
+.error-messag {
+    color: red;
+    text-align: center;
+}

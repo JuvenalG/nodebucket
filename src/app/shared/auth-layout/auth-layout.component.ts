@@ -1,3 +1,12 @@
+/**
+ * Title: auth-layout.component.ts
+ * Author: Professor Krasso
+ * Date: 21 March 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: main component for auth-layout
+ */
+
+
 import { Component, OnInit } from '@angular/core';
 
 @Component({
