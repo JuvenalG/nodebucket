@@ -1,6 +1,14 @@
 /**
- * Require statements
+ * Title: app.js
+ * Author: Professor Krasso
+ * Date: 28 March 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: Sets up the server using useful libraries such as express and bodyparser so that http communication methods can be used
  */
+
+
+ //Require statements
+
 const express = require('express');
 const http = require('http');
 const morgan = require('morgan');

@@ -1,3 +1,11 @@
+/**
+ * Title: auth.guard.ts
+ * Author: Professor Krasso
+ * Date: 28 March 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: routes authoirzed user to the home component upon activation
+ */
+
 import { Injectable } from '@angular/core';
 import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
