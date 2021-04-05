@@ -1,0 +1,44 @@
+/**
+ * Title: not-found.component.css
+ * Author: Professor Krasso
+ * Date: 4 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: all css styling for the not-found  component
+ */
+
+
+h2 {
+  font-size: 100px;
+  white-space: nowrap;
+  overflow:visible;
+  text-overflow: ellipsis;
+  text-align: center;
+}
+
+
+
+.pics {
+  justify-content: center;
+  align-items: center;
+}
+
+
+.navbar-container {
+  padding: 5px;
+  text-align: end;
+
+}
+
+.navbar-link {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-top: 5px;
+}
+

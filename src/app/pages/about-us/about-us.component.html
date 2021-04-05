@@ -1,0 +1,37 @@
+<!--
+ * Title: about-us.component.html
+ * Author: Professor Krasso
+ * Date: 4 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: hyperlink markup for about-us component that simply displays the two rows that are made using fxFlex with the row on right containg three columns
+-->
+
+
+<div >
+<div  fxFlex='70' [style.margin-top]="'15%'" [style.margin-right]="'3%'">
+ <h2>About Us</h2>
+<p>Hello world this website has been developed by Juvenal Gonzalez and you can find his portfolio <a href="https://juvenalg.github.io/web-330/">here</a> for further details on his achievements and academic acomplishments. As of the moment Juvenal is currently in his senior year at Bellevue University and has designed this page to allow users to create tasks and mark them as done by dragging the task to a column titled done. You may also rearrange your tasks as desired in the current column based on its priority. The developer hopes you enjoy these features and you may contact him with the information displayed on to the right for any type of feedback. Juvenal uses an ultrawide monitor to create code and to game some of todays newest perfomance demanding titles. He has tested almost every 3080 graphic card as pictured and also uses them to mine ethereum. Thank you for visiting the page, please click on the tasks link above to return to the task page. </p>
+</div>
+
+<div  fxFlex='30' fxLayout="column" fxLayoutGap="20px">
+  <div>
+    <mat-card class='mat-elevation-z0'>
+      <mat-card-title class="card-title-icon">
+        <mat-icon color="primary">phone</mat-icon>
+      </mat-card-title>
+      <br />
+      <mat-card-content class="contact">
+        <p>Direct: 555-555-5555</p>
+        <p>Toll-free: 1-888-555-5555</p>
+        <p>Fax: 555-555-5555</p>
+      </mat-card-content>
+     </mat-card>
+  </div>
+  <div>
+<img src="../../../assets/20210228_145000.jpg">
+  </div>
+  <div>
+    <img src="../../../assets/20210401_212445_HDR.jpg">
+  </div>
+ </div>
+</div>

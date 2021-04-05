@@ -1,0 +1,47 @@
+
+<!--
+ * Title: not-found.component.html
+ * Author: Professor Krasso
+ * Date: 4 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: hyperlink markup for the not-found  component that simply displays 3 columns with the middle column containing two rows in which each row displays an image
+-->
+
+
+<div fxLayout="column" [style.margin-top]="'15%'" fxLayoutGap="50px" fxLayoutAlign="center center">
+
+  <nav >
+    <mat-toolbar fxFlex="100">
+      <!-- navbar container -->
+      <div class="navbar-container"  fxLayoutAlign="end none">
+        <!-- logo -->
+
+
+        <button (click)="logIn()" >Login</button>
+
+
+      </div>
+
+    </mat-toolbar>
+  </nav>
+
+
+<div fxFlex>
+<h2>Ooops!!!</h2>
+
+</div>
+<div fxLayout="row" fxLayoutGap="100px">
+<div fxFlex="50" >
+
+<img src="../../../assets/404.jfif">
+</div>
+<div fxFlex="50">
+
+  <img src="../../../assets/404b.jfif">
+</div>
+</div>
+<div fxFlex>
+
+<h2>404 Page Not Found</h2>
+</div>
+</div>

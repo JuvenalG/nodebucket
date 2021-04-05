@@ -1,0 +1,43 @@
+/**
+ * Title: about-us.component.css
+ * Author: Professor Krasso
+ * Date: 4 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: all css styling for the about-us component
+ */
+
+
+h2 {
+  text-align: center;
+}
+
+
+p {
+  margin: auto;
+  margin-left: 10%;
+}
+
+
+.mat-icon {
+  float: left;
+}
+
+
+.contact {
+  float: left;
+  display: block;
+}
+
+img {
+  float: left;
+}
+
+.right-container {
+    vertical-align: auto;
+}
+
+.left-container {
+    margin-top: 20%;
+    padding-top: 20%;
+}
+

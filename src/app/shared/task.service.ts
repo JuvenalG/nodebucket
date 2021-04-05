@@ -18,6 +18,8 @@ export class TaskService {
                         //talks to API
   constructor(private http: HttpClient) { }
 
+                                               //each task uses the API defined in server/routes/employe-route.js to either delete, create, or update a task array
+
    /**
     * Find All tasks
     * @param empId
@@ -32,9 +34,10 @@ export class TaskService {
    * @param task
    * @returns  new task
    */
-  createTask(empId: string, task: string): Observable<any>{
+  createTask(empId: string, task: string, taskb: string): Observable<any>{
             return this.http.post('/api/employees/' + empId + '/tasks', {
-              text: task
+              title: task,
+              description: taskb
             })
   }
 /**
@@ -57,6 +60,6 @@ export class TaskService {
  * @returns deleted task
  */
   deleteTask(empId: string, taskId: string): Observable<any> {
-      return this.http.delete('/api/employees/' + empId + '/tasks' + taskId);
+      return this.http.delete('/api/employees/' + empId + '/tasks/' + taskId);
   }
 }

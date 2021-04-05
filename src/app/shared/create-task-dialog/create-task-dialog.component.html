@@ -1,0 +1,25 @@
+<!--
+ * Title: create-task-dialog.component.html
+ * Author: Professor Krasso
+ * Date: 4 April 2021
+ * Modified By: Juvenal Gonzalez
+ * Description: hyperlink markup for create-task-dialog component
+-->
+
+
+<h2 mat-dialog-title>Add new task</h2>
+
+<mat-dialog-content [formGroup]='taskForm' > <!--formGroup stores each inputted value in and upon sumbittal creates a new task by saving the values in the todo array-->
+
+    <mat-form-field>
+      <input type='text' matInput placeholder="Enter a Title" formControlName='title' (keydown.enter)='createTask()' />
+  </mat-form-field>
+  <mat-form-field>
+    <input type='text' matInput placeholder="Enter a description" formControlName='description' (keydown.enter)='createTask()' />
+</mat-form-field>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="cancel()">Cancel</button> <!--button is disabled if all validations are not met-->
+  <button mat-button (click)='createTask()' [disabled]='!taskForm.valid'>Create Task</button>
+</mat-dialog-actions>

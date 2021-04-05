@@ -5,12 +5,100 @@
  * Modified By: Juvenal Gonzalez
  * Description: hyperlink markup for home component
 -->
+<div fxFlex fxLayout="column"  fxLayoutAlign="center center"  fxLayoutGap="5px" [style.margin-top]="'2%'"  >
+<!--Create Task Opens a matDialog which is a popup component-->
+<div fxFlex >
+      <div fxLayout="column" class="task-container">
+        <div class="buttonCreate" >
+        <button mat-raised-button color='primary' (click)='openCreateTaskDialog()'>Create Task</button>
+      </div>
+      </div>
+</div>
+<br>
+<!--Create Task END-->
+<!--tasks Columns-->
+<div fxFlex>
+  <div fxLayout="row" class="task-container" fxLayoutGap='40%'>
+        <!--Todo First column in which newly created tasks are added to-->
+      <div fxFlex fxLayoutGap='10px' class="colWidth" [style.min-height]="'500px'">
+            <mat-card>
+                <mat-card-title>Todo</mat-card-title>
 
-<div fxLayout="column" class="main-welcome">
-    <h1 class="title">
-      Welcome to WEB 450's - nodebucket Project <br />
-      <span class="subtitle">
-        Pay close attention to the requirements, double and triple check the files for code attribution, and do not wait unitl the last minute to begin working on each item.
-      </span>
-    </h1>
+                <mat-card-content>
+                  <div fxLayout='column'
+                  fxLayoutGap='10px'
+                  class="task-list"
+                  cdkDropList
+                  #todoList='cdkDropList'
+                  [cdkDropListData]="todo"
+                  [cdkDropListConnectedTo]='[doneList]'
+                  (cdkDropListDropped)='drop($event)'> <!--CDK Allow drag and drop features uses the event to call the cdk library simplifying the process-->
+
+                    <div *ngFor="let item of todo" cdkDrag>
+                      <mat-card class="mat-elevation-z0 task-card">
+                          <mat-card-content>
+                            <div fxLayout="row">           <!--Displays two properties of employee object-->
+                              <div fxFlex class="done"><h2>Title: {{item.title}}</h2><p>Description: {{item.description}}</p> </div>
+                            <div fxFlex fxLayoutAlign="end">
+                                <button [matMenuTriggerFor]="todoOptions" class="" mat-icon-button>
+                                    <mat-icon>delete_forever</mat-icon> <!--Specifiy the image of the icon you would like used here-->
+                                </button>
+                                <mat-menu #todoOptions="matMenu" x-position="before"> <!--DELETES CURRENT TASK-->
+                                    <button  (click)='deleteTask(item._id)' mat-menu-item>DELETE</button>
+                                </mat-menu>
+                              </div>
+                            </div>
+                          </mat-card-content>
+                      </mat-card>
+                    </div>
+                  </div>
+                </mat-card-content>
+            </mat-card>
+      </div>
+      <!--END of TODO-->
+        <!--Done ARRAY ALMOST IDENTICAL TO PREVIOUS COLUMN WITH SAME FEATURES-->
+      <div fxFlex fxLayoutGap='10px' class="colWidth">
+        <mat-card>
+          <mat-card-title>Done Tasks</mat-card-title>
+          <mat-card-content>
+              <div fxLayout='column'
+              fxLayoutGap='10px'
+              class="task-list"
+              cdkDropList
+              #doneList='cdkDropList'
+              [cdkDropListData]="done"
+              [cdkDropListConnectedTo]='[todoList]'
+              (cdkDropListDropped)='drop($event)'>
+
+              <div *ngFor="let item of done" cdkDrag>
+                <mat-card class="mat-elevation-z0 task-card">
+                  <mat-card-content>
+                    <div fxLayout="row">
+                      <div fxFlex class="done"><h2>Title: {{item.title}}</h2><p>Description: {{item.description}}</p> </div>
+                      <!-- END of DONE -->
+
+                      <div fxFlex fxLayoutAlign="end">
+                        <button [matMenuTriggerFor]="doneOptions" class="" mat-icon-button>
+                            <mat-icon>delete_forever</mat-icon>
+                        </button>
+                        <mat-menu #doneOptions="matMenu" x-position="before">
+                            <button (click)='deleteTask(item._id)' mat-menu-item>DELETE</button>
+                        </mat-menu>
+                      </div>
+                    </div>
+                  </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+        </mat-card-content>
+    </mat-card>
+</div>
+<!--END of Done-->
   </div>
+ <!--END OF FX LAYOUT CONTAINER-->
+</div>
+ <!--END of TASK COLUMNS-->
+
+</div>
+
+

@@ -1,25 +1,27 @@
 <!--
  * Title: base-layout.component.html
  * Author: Professor Krasso
- * Date: 21 March 2021
+ * Date: 4 April 2021
  * Modified By: Juvenal Gonzalez
  * Description: hyperlink markup for base-layout component
 -->
 
+
 <!--Parent Route that leads to child routes upon authorization-->
 
-<div fxLayout="column">
+<div fxLayout="column" >
 
     <!-- navigation -->
-    <nav fxFlex>
-      <mat-toolbar>
+    <nav fxFlex >
+      <mat-toolbar >
         <!-- navbar container -->
-        <div class="navbar-container">
+        <div class="navbar-container"  fxLayoutAlign="end none">
           <!-- logo -->
-          <button class="logo" routerLink="/" mat-button>nodebucket</button>
 
-          <button class="navbar-link" routerLink="/" mat-button>Home</button>
-          <button class="navbar-link" mat-button>About</button>
+           <!--alternates the navigation about based on what page is currently being accessed-->
+          <button class="logo"  mat-button (click)='navChange()'>{{text}}</button>
+                                                   <!--Logs out user and navigates back to login component-->
+          <button class="navbar-link" routerLink="/session/login" mat-button (click)='logOut()'>Log Out</button>
         </div>
 
       </mat-toolbar>

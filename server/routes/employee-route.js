@@ -17,7 +17,7 @@ const router = express.Router();
 
 
 /**
- * API: findAllTasks
+ * API: findEmployeesById
  * @param empId
  * searches employee by id and displays all tasks
  */
@@ -286,5 +286,43 @@ router.post('/:empId/tasks', async(req,res) => {
       res.status(500).send(deleteTaskCatchError.toObject());
     }
   });
+
+  /**
+ * API: findAllTasks
+ * @param empId
+ * @param tasks
+ * finds all tasks
+ */
+
+  router.get("/:empId/tasks", async (req, res) => {
+    try {
+      Employee.findOne({ empId: req.params.empId },"empId todo done",
+        function (err, employee) {
+          if (err) {
+                    console.log(err);
+
+                    const mongoDBFindAllTasksException = new BaseResponse("500", `Internal server error ${err.message}`, null);
+
+                    res.status(500).send(mongoDBFindAllTasksException.toObject());
+                   }
+          else {
+                  console.log(employee);
+
+                  const employeeTaskResponse = new BaseResponse("200", "Query successful" , employee);
+
+                  res.status(200).send(employeeTaskResponse.toObject());
+               }
+        }
+      );
+    } catch (e) {
+      const findAllTasksError = new BaseResponse("500", `Internal server error ${e.message}`, null
+      );
+
+      res.status(500).send(findAllTasksError.toObject());
+    }
+  });
+
+
+
 
 module.exports = router;
